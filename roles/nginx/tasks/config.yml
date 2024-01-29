@@ -1,0 +1,10 @@
+---
+- name: 기본 웹 페이지 생성
+  template:
+    src: index.j2
+    dest: "{{ nginxdir }}"
+    mode: 0644
+    backup: yes
+  notify:
+    - restart webserver
+

@@ -1,0 +1,6 @@
+---
+- name: 각 노드에 nginx 설치하기
+  hosts: nodes
+  become: true
+  roles:
+    - role: ./roles/nginx

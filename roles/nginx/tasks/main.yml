@@ -1,0 +1,7 @@
+---
+- name: 배포판 별 리눅스 설치
+  include_tasks: "{{ lnx_name }}.yml"
+
+- name: nginx 구성하기
+  include_tasks: config.yml
+
