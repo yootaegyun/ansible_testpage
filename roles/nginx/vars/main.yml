@@ -6,4 +6,6 @@ lnx_name: "{{ 'CentOS' if ansible_distribution == 'CentOS'
 nginxdir: "{{ '/usr/share/nginx/html/index.html' if ansible_distribution == 'CentOS'
             else '/var/www/html/index.html' if ansible_distribution == 'Ubuntu'
             else 'ETC' }}"
+pub: "{{ ansible_all_ipv4_addresses | select('match', '^192') | join('\n') }}"
+pri: "{{ ansible_all_ipv4_addresses | select('match', '^10') | join('\n') }}"
 
